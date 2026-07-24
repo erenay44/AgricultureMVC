@@ -12,7 +12,7 @@ namespace DataLayer.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=localhost\\SQLEXPRESS;database=AgricultureDb;integrated security = true");
+            optionsBuilder.UseSqlServer("server=localhost\\SQLEXPRESS;database=AgricultureDb;integrated security = true;TrustServerCertificate=True;");
 
         }
         public DbSet<Address> Addresses { get; set; }
