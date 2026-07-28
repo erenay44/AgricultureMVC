@@ -1,4 +1,5 @@
 ﻿using AgricultureUI.Models;
+using AspNetCoreGeneratedDocument;
 using BussinessLayer.Abstract;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -39,14 +40,24 @@ namespace AgricultureUI.Controllers
             }
             return View(model);
         }
-        [HttpDelete]
         public IActionResult DeleteService(int id)
         {
             var values = _serviceService.GetById(id);
             _serviceService.Delete(values);
             return RedirectToAction("Index");
         }
-
+        [HttpGet]
+        public IActionResult EditService(int id)
+        {
+            var values = _serviceService.GetById(id);
+            return View (values);
+        }
+        [HttpPost]
+        public IActionResult EditService(Service service)
+        {
+            _serviceService.Update(service);
+            return RedirectToAction("Index");
+        }
 
     }
 }

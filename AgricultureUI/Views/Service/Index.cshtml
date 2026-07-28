@@ -12,6 +12,8 @@
         <th>Başlık</th>
         <th>Açıklama</th>
         <th>Image</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
     </tr>
     @foreach(var item in Model)
     {
@@ -20,6 +22,8 @@
             <td>@item.Title</td>
             <td>@item.Description</td>
             <td>@item.Image</td>
+			<td><a href="/Service/DeleteService/@item.ServiceID" class=" btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Service/EditService/@item.ServiceID" class=" btn btn-outline-warning">Düzenle</a></td>
         </tr>
     }
 </table>
