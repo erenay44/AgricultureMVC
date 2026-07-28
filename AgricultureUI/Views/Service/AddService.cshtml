@@ -1,0 +1,28 @@
+﻿@model AgricultureUI.Models.ServiceAddViewModel
+@{
+    ViewData["Title"] = "AddService";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AddService</h1>
+
+<form method="post">
+    <div class="form-check">
+    @Html.Label("Başlık")
+    <span asp-validation-for="Title" class="text-danger"></span>
+        <input type="text" asp-for="Title" class="form-check" />
+    </div>
+    <div class="form-check">
+        @Html.Label("Görsel Yolu")
+        <span asp-validation-for="Image" class="text-danger"></span>
+
+        <input type="text" asp-for="Image" class="form-check" />
+    </div> 
+    <div class="form-check">
+        @Html.Label("Açıklama")
+        <span asp-validation-for="Description" class="text-danger"></span>
+
+        <input type="text" asp-for="Description" class="form-check" />
+    </div>
+    <button class="btn btn-outline-warning">Kaydet</button>
+</form>
