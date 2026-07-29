@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BussinessLayer.Abstract
 {
-    internal interface IIMageService:IGenericService<Image>
+    public interface IImageService:IGenericService<Image>
     {
     }
 }
