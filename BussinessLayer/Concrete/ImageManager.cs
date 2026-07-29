@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BussinessLayer.Concrete
 {
-    public class ImageManager:IIMageService
+    public class ImageManager:IImageService
     {
         private readonly IImageDal _imageDal;
 
