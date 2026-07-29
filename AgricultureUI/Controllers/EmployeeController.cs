@@ -51,9 +51,30 @@ namespace AgricultureUI.Controllers
             _employeeService.Delete(values);
             return RedirectToAction("Index");
         }
+        [HttpGet]
         public IActionResult EditEmployee(int id)
         {
-
+            var values = _employeeService.GetById(id);
+            return View(values);
+        }
+        [HttpPost]
+        public IActionResult EditEmployee(Employee employee)
+        {
+            EmployeeValidator validationRules = new EmployeeValidator();
+            ValidationResult result = validationRules.Validate(employee);
+            if (result.IsValid)
+            {
+                _employeeService.Update(employee);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
 
     }
