@@ -12,6 +12,9 @@ builder.Services.AddScoped<IServiceService, ServiceManager>();
 builder.Services.AddScoped<IServiceDal, EfServiceDal>();
 builder.Services.AddScoped<IEmployeeService, EmployeeManager>();
 builder.Services.AddScoped<IEmployeeDal, EfEmployeeDal>();
+builder.Services.AddScoped<IAnnouncementService, AnnouncementManager>();
+builder.Services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
+
 builder.Services.AddDbContext<AgricultureContext>();
 var app = builder.Build();
 
