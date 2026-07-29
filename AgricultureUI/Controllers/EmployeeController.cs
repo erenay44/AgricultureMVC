@@ -1,5 +1,7 @@
 ﻿using BussinessLayer.Abstract;
+using BussinessLayer.ValidationRules;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgricultureUI.Controllers
@@ -26,8 +28,33 @@ namespace AgricultureUI.Controllers
         [HttpPost]
         public IActionResult AddEmployee(Employee employee)
         {
-            _employeeService.Insert(employee);
+            EmployeeValidator validationRules = new EmployeeValidator();
+            ValidationResult result = validationRules.Validate(employee);
+            if (result.IsValid)
+            {
+                _employeeService.Insert(employee);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach(var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName,item.ErrorMessage);
+                }
+            }
+            return View();
+            
+        }
+        public IActionResult DeleteEmployee(int id) 
+        {
+            var values = _employeeService.GetById(id);
+            _employeeService.Delete(values);
             return RedirectToAction("Index");
         }
+        public IActionResult EditEmployee(int id)
+        {
+
+        }
+
     }
 }
