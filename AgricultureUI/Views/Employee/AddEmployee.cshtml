@@ -1,0 +1,45 @@
+﻿@model EntityLayer.Concrete.Employee
+@{
+    ViewData["Title"] = "AddEmployee";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Personel Kaydı</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Adı Soyadı</label>
+                    <input type="text" class="form-control" placeholder="Username" asp-for="Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Görev</label>
+                    <input type="text" class="form-control" placeholder="Görev" asp-for="Title">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Görsel Yolu</label>
+                    <input type="text" class="form-control" placeholder="Görsel Yolu" asp-for="ImageUrl">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Facebook</label>
+                    <input type="text" class="form-control" placeholder="Facebook" asp-for="FacebookUrl">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Twitter</label>
+                    <input type="text" class="form-control" placeholder="Twitter" asp-for="TwitterUrl">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Instagram</label>
+                    <input type="text" class="form-control" placeholder="Instagram" asp-for="InstagramUrl">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Website</label>
+                    <input type="text" class="form-control" placeholder="Website" asp-for="WebsiteUrl">
+                </div>
+                <button type="submit" class="btn btn-primary me-2">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
+

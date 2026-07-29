@@ -10,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IServiceService, ServiceManager>();
 builder.Services.AddScoped<IServiceDal, EfServiceDal>();
+builder.Services.AddScoped<IEmployeeService, EmployeeManager>();
+builder.Services.AddScoped<IEmployeeDal, EfEmployeeDal>();
 builder.Services.AddDbContext<AgricultureContext>();
 var app = builder.Build();
 
