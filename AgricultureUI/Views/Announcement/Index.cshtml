@@ -15,9 +15,12 @@
                         <tr>
                             <th>#</th>
                             <th>Başlık</th>
-                            <th>Tarih</th>
+                            <th>Açıklama</th>
                             <th>Sil</th>
                             <th>Düzenle</th>
+                            <th>Aktif</th>
+                            <th>Pasif</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -26,6 +29,7 @@
                             <tr>
                                 <td>@item.AnnouncementId</td>
                                 <td>@item.Title</td>
+                                <td>@item.Description</td>
                                 <td><a href="/Announcement/DeleteAnnouncement/@item.AnnouncementId" class="btn-outline-info">Sil</a></td>
                                 <td><a href="/Announcement/EditAnnouncement/@item.AnnouncementId" class="btn-outline-warning">Düzenle</a></td>
                                 <td><a href="/Announcement/DeleteAnnouncement/@item.AnnouncementId" class="btn-outline-success">Aktif Yap</a></td>
