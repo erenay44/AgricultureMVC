@@ -27,6 +27,8 @@ namespace AgricultureUI.Controllers
         [HttpPost]
         public IActionResult AddAnnouncement(Announcement announcement)
         {
+            announcement.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            announcement.Status = true;
             _announcementService.Insert(announcement);
             return RedirectToAction("Index");
 
