@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using EntityLayer.Concrete;
 using BussinessLayer.Abstract;
+using BussinessLayer.ValidationRules;
 namespace AgricultureUI.Controllers
 {
     public class ImageController : Controller
