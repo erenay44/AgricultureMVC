@@ -2,6 +2,7 @@
 using EntityLayer.Concrete;
 using BussinessLayer.Abstract;
 using BussinessLayer.ValidationRules;
+using FluentValidation.Results;
 namespace AgricultureUI.Controllers
 {
     public class ImageController : Controller
@@ -26,8 +27,21 @@ namespace AgricultureUI.Controllers
         [HttpPost]
         public IActionResult AddImage(Image image)
         {
-            _imageService.Insert(image);
-            return RedirectToAction("Index");
+            ImageValidator validationRules = new ImageValidator();
+            ValidationResult result = validationRules.Validate(image);
+            if (result.IsValid) 
+            {
+               _imageService.Insert(image);
+               return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
         public IActionResult DeleteImage(int id)
         {
