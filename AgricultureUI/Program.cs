@@ -16,6 +16,8 @@ builder.Services.AddScoped<IAnnouncementService, AnnouncementManager>();
 builder.Services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
 builder.Services.AddScoped<IImageService, ImageManager>();
 builder.Services.AddScoped<IImageDal, EfImageDal>();
+builder.Services.AddScoped<IAddressService, AddressManager>();
+builder.Services.AddScoped<IAddressDal, EfAddressDal>();
 
 builder.Services.AddDbContext<AgricultureContext>();
 var app = builder.Build();
