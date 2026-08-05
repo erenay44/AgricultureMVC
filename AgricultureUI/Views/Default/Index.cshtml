@@ -25,9 +25,7 @@
 
 
 	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
-		<!-- Modal1 -->
 		<div class="modal-dialog">
-			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -39,42 +37,10 @@
 			</div>
 		</div>
 	</div>
-	<!-- //Modal1 -->
-	<!--//Slider-->
-	<!--//Header-->
-	<!-- about -->
-	<div class="about" id="about">
-		<div class="container">
-			<h3 class="tittle">About Us</h3>
-			<p class="heading-btm-w3ls">We are a world-leading provider of agricultural products.</p>
-			<div id="horizontalTab">
-				<ul class="resp-tabs-list">
-					<li>History</li>
-					<li>About us</li>
-					<li>Our clients </li>
-				</ul>
-				<div class="resp-tabs-container">
-					<div class="tab1">
-						<p class="para-w3-agileits">Duis hendrerit lacus vel eros gravida, ac bibendum urna sollicitudin. Ut tempus leo quis diam auctor, et malesuada risus eleifend. Vivamus quis facilisis arcu. Vestibulum quis velit sit amet odio ullamcorper congue id a est.Suspendisse fringilla pellentesque risus sit amet bibendum. id consequat turpis auctor venenatis.</p>
-					</div>
-					<div class="tab2">
-						<p class="para-w3-agileits">Proin congue, est dapibus efficitur egestas, turpis ligula finibus sem, sed lacinia dui risus nec enim. Morbi condimentum, turpis at fringilla condimentum, leo arcu malesuada urna, ut vulputate lectus enim in odio.Donec fringilla hendrerit laoreet. Cras augue urna, convallis mollis dictum at. Phasellus sit amet massa lectus.  </p>
-					</div>
-					<div class="tab3">
-						<div class="clients">
-							<ul>
-								<li><img src="images/c1.png" alt="clients" class="img-responsive" /><span>Sean Damon</span></li>
-								<li><img src="images/c2.png" alt="clients" class="img-responsive" /><span>Natalie Barnes</span></li>
-								<li><img src="images/c3.png" alt="clients" class="img-responsive" /><span>John Mccoist</span></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //about-bottom -->
-	<!--sevices-->
+
+	@await Component.InvokeAsync("_AboutPartial")
+
+
 	<div class="sevices-w3layouts" id="services">
 		<div class="container">
 			<h3 class="tittle">Our Services</h3>
