@@ -10,6 +10,6 @@ namespace EntityLayer.Concrete
     {
         public int AboutId { get; set; }
         public string AboutHistory { get; set; }
-        public string AboutUs { get; set;
+        public string AboutUs { get; set; }
     }
 }
