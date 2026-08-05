@@ -3,48 +3,17 @@
 	ViewData["Title"] = "Index";
 	Layout = null;
 }
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>In Harvest an Agriculture Category Flat Bootstrap Responsive Website Template | Home :: W3layouts</title>
-	<!-- for-mobile-apps -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="In Harvest Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
-	<script type="application/x-javascript">
-		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-			   function hideURLbar(){ window.scrollTo(0,1); } </script>
-	<!-- //for-mobile-apps -->
-	<link href="~/web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="~/web/css/font-awesome.css" rel="stylesheet">
-	<link rel="stylesheet" href="~/web/css/chocolat.css" type="text/css" media="screen">
-	<link href="~/web/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
-	<link href="~/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<script type="text/javascript" src="~/web/js/modernizr-2.6.2.min.js"></script>
-	<!--fonts-->
-	<link href="//fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-	<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-	<!--//fonts-->
 
-</head>
+@await Component.InvokeAsync("_HeadPartial")
+
 <body>
 	<!-- header -->
 	<div class="header">
 		<div class="container">
-			<div class="w3l_header_left">
-				<ul>
-					<li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>1143 New Hampshire Washington, USA</li>
-					<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> +(010) 221 918 811</li>
-					<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:info@example.com">info@example.com</a></li>
-				</ul>
-			</div>
+			@await Component.InvokeAsync("_TopAddressPartial")
 			<div class="w3l_header_right">
 				<div class="w3ls-social-icons text-left">
 					<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
