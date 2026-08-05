@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Concrete.EntityFramework
 {
-    public class EfAboutDal: GenericRepository<About>, IAboutService
+    public class EfAboutDal: GenericRepository<About>, IAboutDal
     {
     }
 }
