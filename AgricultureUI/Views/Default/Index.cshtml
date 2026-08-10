@@ -54,23 +54,8 @@
 	<div class="contact-agile" id="contact">
 		<div class="container">
 			@await Component.InvokeAsync("_AddressPartial")
-			<div class="col-md-9 contact-middle">
-				<h2>Say Hello</h2>
-				<form action="#" method="post">
-					<div class="form-agileinfo">
-						<p>Name</p>
-						<input type="text" name="your name" placeholder="Your name" required="" />
-						<p>Email</p>
-						<input type="email" name="your email" placeholder="Your email" required="" />
-					</div>
-					<div class="form-agileits-w3layouts">
-						<p>Comments</p>
-						<textarea name="your message" placeholder="Your message" required=""></textarea>
-						<input type="submit" value="SEND MESSAGE">
-					</div>
-					<div class="clearfix"></div>
-				</form>
-			</div>
+
+			@await Component.InvokeAsync("_ContactPartial")
 		</div>
 	</div>
 	<div class="map-w3ls">
