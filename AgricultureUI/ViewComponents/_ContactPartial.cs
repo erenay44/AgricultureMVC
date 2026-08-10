@@ -16,5 +16,6 @@ namespace AgricultureUI.ViewComponents
             var values = _contactService.GetListAll();
             return View(values);
         }
+      
     }
 }
