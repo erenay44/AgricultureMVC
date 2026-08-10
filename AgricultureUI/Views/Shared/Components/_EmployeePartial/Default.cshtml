@@ -1,128 +1,43 @@
-﻿<div class="team" id="team">
+﻿@using EntityLayer.Concrete
+@model List<Employee>
+<div class="team" id="team">
 	<div class="container">
 		<h3 class="tittle">Ekip Arkadaşlarımız</h3>
-		<p class="heading-btm-w3ls">Suspendisse fringilla pellentesque risussit amet bibendum.</p>
+		<p class="heading-btm-w3ls">Donanımlı insanların hepsi burada...</p>
 		<div class="wthree_team_grids">
-			<div class="col-md-3 wthree_team_grid">
-				<div class="hovereffect">
-					<img src="images/t1.jpg" alt=" " class="img-responsive" />
+			@foreach (var item in Model)
+			{
+				<div class="col-md-3 wthree_team_grid">
+					<div class="hovereffect">
+						<img src="@item.ImageUrl" alt=" " class="img-responsive" />
 					<div class="overlay">
-						<h6>Lorem ipsum</h6>
+						<h6>@item.Name</h6>
 						<div class="rotate">
 							<p class="group1">
-								<a href="#">
+								<a href="@item.TwitterUrl">
 									<i class="fa fa-twitter"></i>
 								</a>
-								<a href="#">
+								<a href="@item.FacebookUrl">
 									<i class="fa fa-facebook"></i>
 								</a>
 							</p>
 							<hr>
 							<hr>
 							<p class="group2">
-								<a href="#">
+									<a href="@item.InstagramUrl">
 									<i class="fa fa-instagram"></i>
 								</a>
-								<a href="#">
+								<a href="@item.WebsiteUrl">
 									<i class="fa fa-dribbble"></i>
 								</a>
 							</p>
 						</div>
 					</div>
 				</div>
-				<h4>Max Payne</h4>
-				<p>Field Worker</p>
+				<h4>@item.Name</h4>
+				<p>@item.Title</p>
 			</div>
-			<div class="col-md-3 wthree_team_grid">
-				<div class="hovereffect">
-					<img src="images/t2.jpg" alt=" " class="img-responsive" />
-					<div class="overlay">
-						<h6>Lorem ipsum</h6>
-						<div class="rotate">
-							<p class="group1">
-								<a href="#">
-									<i class="fa fa-twitter"></i>
-								</a>
-								<a href="#">
-									<i class="fa fa-facebook"></i>
-								</a>
-							</p>
-							<hr>
-							<hr>
-							<p class="group2">
-								<a href="#">
-									<i class="fa fa-instagram"></i>
-								</a>
-								<a href="#">
-									<i class="fa fa-dribbble"></i>
-								</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<h4>Michael Lii</h4>
-				<p>Field Worker</p>
-			</div>
-			<div class="col-md-3 wthree_team_grid">
-				<div class="hovereffect">
-					<img src="images/t3.jpg" alt=" " class="img-responsive" />
-					<div class="overlay">
-						<h6>Lorem ipsum</h6>
-						<div class="rotate">
-							<p class="group1">
-								<a href="#">
-									<i class="fa fa-twitter"></i>
-								</a>
-								<a href="#">
-									<i class="fa fa-facebook"></i>
-								</a>
-							</p>
-							<hr>
-							<hr>
-							<p class="group2">
-								<a href="#">
-									<i class="fa fa-instagram"></i>
-								</a>
-								<a href="#">
-									<i class="fa fa-dribbble"></i>
-								</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<h4>Mark</h4>
-				<p>Field Worker</p>
-			</div>
-			<div class="col-md-3 wthree_team_grid">
-				<div class="hovereffect">
-					<img src="images/t4.jpg" alt=" " class="img-responsive" />
-					<div class="overlay">
-						<h6>Lorem ipsum</h6>
-						<div class="rotate">
-							<p class="group1">
-								<a href="#">
-									<i class="fa fa-twitter"></i>
-								</a>
-								<a href="#">
-									<i class="fa fa-facebook"></i>
-								</a>
-							</p>
-							<hr>
-							<hr>
-							<p class="group2">
-								<a href="#">
-									<i class="fa fa-instagram"></i>
-								</a>
-								<a href="#">
-									<i class="fa fa-dribbble"></i>
-								</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<h4>John Cena</h4>
-				<p>Field Worker</p>
-			</div>
+			}
 			<div class="clearfix"> </div>
 		</div>
 	</div>
