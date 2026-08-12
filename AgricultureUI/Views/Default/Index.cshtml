@@ -58,9 +58,7 @@
 			@await Html.PartialAsync("/Views/Default/SendMessage.cshtml")
 		</div>
 	</div>
-	<div class="map-w3ls">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6209.852593501853!2d-77.0416869731965!3d38.902800718279195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xae69b9ad9dbd5ebf!2sRenaissance+Washington%2C+DC+Dupont+Circle+Hotel!5e0!3m2!1sen!2sin!4v1479208161830"></iframe>
-	</div>
+	@await Component.InvokeAsync("_MapPartial")
 	<div class="bottom-social-w3ls w3ls-social-icons">
 		<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
 		<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
