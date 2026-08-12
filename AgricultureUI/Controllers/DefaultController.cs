@@ -31,5 +31,9 @@ namespace AgricultureUI.Controllers
             _contactService.Insert(contact);
             return RedirectToAction("Index", "Default");
         }
+        public PartialViewResult ScriptPartial()
+        {
+            return PartialView();
+        }
     }
 }
