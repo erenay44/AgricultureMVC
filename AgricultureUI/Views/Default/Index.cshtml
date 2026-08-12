@@ -55,8 +55,6 @@
 		<div class="container">
 			@await Component.InvokeAsync("_AddressPartial")
 
-			@* @await Component.InvokeAsync("_ContactPartial") *@
-
 			@await Html.PartialAsync("/Views/Default/SendMessage.cshtml")
 		</div>
 	</div>
