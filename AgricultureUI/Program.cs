@@ -5,6 +5,7 @@ using DataLayer.Concrete.EntityFramework;
 using DataLayer.Contexts;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,6 +33,7 @@ builder.Services.AddScoped<IAdminDal, EfAdminDal>();
 
 
 builder.Services.AddDbContext<AgricultureContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AgricultureContext>();
 builder.Services.AddMvc(config =>
 {
     var policy = new AuthorizationPolicyBuilder()
