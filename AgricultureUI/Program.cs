@@ -3,6 +3,9 @@ using BussinessLayer.Concrete;
 using DataLayer.Abstract;
 using DataLayer.Concrete.EntityFramework;
 using DataLayer.Contexts;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +33,20 @@ builder.Services.AddScoped<IAdminDal, EfAdminDal>();
 
 builder.Services.AddDbContext<AgricultureContext>();
 var app = builder.Build();
+builder.Services.AddMvc(config =>
+{
+    var policy = new AuthorizationPolicyBuilder()
+    .RequireAuthenticatedUser()
+    .Build();
+    config.Filters.Add(new AuthorizeFilter(policy));
+});
+builder.Services.AddMvc();
+builder.Services.AddAuthentication(
+    CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(x =>
+    {
+        x.LoginPath = "/Login/Index/";
+    });
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
