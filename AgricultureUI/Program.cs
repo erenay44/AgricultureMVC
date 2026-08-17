@@ -32,7 +32,6 @@ builder.Services.AddScoped<IAdminDal, EfAdminDal>();
 
 
 builder.Services.AddDbContext<AgricultureContext>();
-var app = builder.Build();
 builder.Services.AddMvc(config =>
 {
     var policy = new AuthorizationPolicyBuilder()
@@ -47,6 +46,8 @@ builder.Services.AddAuthentication(
     {
         x.LoginPath = "/Login/Index/";
     });
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
