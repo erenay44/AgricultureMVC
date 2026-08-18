@@ -17,7 +17,6 @@ namespace BussinessLayer.Container
     {
         public static void ContainerDependencies(this IServiceCollection services)
         {
-            services.AddControllersWithViews();
             services.AddScoped<IServiceService, ServiceManager>();
             services.AddScoped<IServiceDal, EfServiceDal>();
             services.AddScoped<IEmployeeService, EmployeeManager>();
