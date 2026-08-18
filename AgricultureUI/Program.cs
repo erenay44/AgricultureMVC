@@ -1,5 +1,6 @@
 using BussinessLayer.Abstract;
 using BussinessLayer.Concrete;
+using BussinessLayer.Container;
 using DataLayer.Abstract;
 using DataLayer.Concrete.EntityFramework;
 using DataLayer.Contexts;
@@ -11,26 +12,7 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IServiceService, ServiceManager>();
-builder.Services.AddScoped<IServiceDal, EfServiceDal>();
-builder.Services.AddScoped<IEmployeeService, EmployeeManager>();
-builder.Services.AddScoped<IEmployeeDal, EfEmployeeDal>();
-builder.Services.AddScoped<IAnnouncementService, AnnouncementManager>();
-builder.Services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
-builder.Services.AddScoped<IImageService, ImageManager>();
-builder.Services.AddScoped<IImageDal, EfImageDal>();
-builder.Services.AddScoped<IAddressService, AddressManager>();
-builder.Services.AddScoped<IAddressDal, EfAddressDal>();
-builder.Services.AddScoped<IContactService, ContactManager>();
-builder.Services.AddScoped<IContactDal, EfContactDal>();
-builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
-builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
-builder.Services.AddScoped<IAboutService, AboutManager>();
-builder.Services.AddScoped<IAboutDal, EfAboutDal>();
-builder.Services.AddScoped<IAdminService, AdminManager>();
-builder.Services.AddScoped<IAdminDal, EfAdminDal>();
-
+builder.Services.ContainerDependencies();
 
 builder.Services.AddDbContext<AgricultureContext>();
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AgricultureContext>();
