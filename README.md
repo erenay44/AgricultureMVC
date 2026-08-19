@@ -108,7 +108,7 @@ Veritabanı varlıklarını (entity) temsil eden POCO sınıfları içerir:
 
 1. Depoyu klonlayın:
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/erenay44/AgricultureMVC.git
    cd AgricultureUI
    ```
 
@@ -158,4 +158,3 @@ dotnet ef migrations add <MigrationAdi> --project DataLayer --startup-project Ag
 
 ---
 
-> Bu README, proje kaynak kodu incelenerek oluşturulmuştur. Ortam değişkenleri, deployment adımları veya lisans bilgisi gibi ek detayları kendi ihtiyaçlarınıza göre güncelleyebilirsiniz.
